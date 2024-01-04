@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from django.utils.translation import gettext_lazy as _
-
+#from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _ #4.0+ 3.9Python
 from admin_honeypot.models import LoginAttempt
 
 
@@ -35,4 +35,5 @@ class LoginAttemptAdmin(admin.ModelAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 
+admin.site.unregist(LoginAttempt)
 admin.site.register(LoginAttempt, LoginAttemptAdmin)
