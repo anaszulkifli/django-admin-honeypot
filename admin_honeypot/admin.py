@@ -35,5 +35,5 @@ class LoginAttemptAdmin(admin.ModelAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 
-admin.site.unregist(LoginAttempt)
+admin.site.unregister(LoginAttempt)
 admin.site.register(LoginAttempt, LoginAttemptAdmin)
